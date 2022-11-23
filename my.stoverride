@@ -1,0 +1,17 @@
+name: Picsart 美易——解锁VIP
+desc: Picsart 美易——解锁VIP
+http:
+  mitm:
+    - "api.meiease.cn"
+  script:
+    - match: ^https:\/\/api\.meiease\.cn\/shop\/subscription\/validate
+      name: Picsart.response
+      type: response
+      require-body: true
+      timeout: 10
+      argument:
+
+script-providers:
+  Picsart.response:
+    url: https://raw.githubusercontent.com/89996462/Quantumult-X/main/ycdz/Picsart.js
+    interval: 86400
