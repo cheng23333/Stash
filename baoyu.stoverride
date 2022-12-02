@@ -1,0 +1,16 @@
+name: baoyu
+desc: baoyu
+http:
+  mitm:
+    - "42.157.*.*"
+  script:
+    - match: ^http[s]?:\/\/.+\/api(\/video\/report_item?|\/live\/room\/detail?|\/video\/related?|\/video\/detail|\/social\/posts_info).*$
+      name: baoyu.request
+      type: request
+      require-body: false
+      timeout: 10
+      argument:
+script-providers:
+  baoyu.request:
+    url: https://raw.githubusercontent.com/gjwj666/qx/main/baoyu.js
+    interval: 86400
